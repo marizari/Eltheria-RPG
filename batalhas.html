@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arena de Eltheria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cinzel Decorative', serif;
+      background: #f8f1e3;
+      color: #3e2d1c;
+      padding: 2rem;
+    }
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .rank-list {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .rank-list li {
+      padding: 0.8rem;
+      border-bottom: 1px dashed #a68c5b;
+      font-weight: bold;
+    }
+    .rank-list li span {
+      font-weight: normal;
+      font-style: italic;
+      color: #705c36;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Arena de Eltheria</h1>
+  <p style="text-align: center;">Veja os guerreiros alistados e acompanhe suas vitórias na guerra.</p>
+  <ul id="lista-guerreiros" class="rank-list"></ul>
+
+  <script>
+    function listarGuerreiros() {
+      const lista = document.getElementById("lista-guerreiros");
+      const guerreiros = JSON.parse(localStorage.getItem("guerreiros")) || [];
+
+      if (guerreiros.length === 0) {
+        lista.innerHTML = '<li>Nenhum guerreiro alistado ainda.</li>';
+        return;
+      }
+
+      lista.innerHTML = guerreiros.map(g => 
+        `<li>${g.nome} <span>— ${g.classe} da Casa ${g.casa} | Vitórias: ${g.vitorias}</span></li>`
+      ).join('');
+    }
+
+    window.addEventListener("DOMContentLoaded", listarGuerreiros);
+  </script>
+</body>
+
+</html>
