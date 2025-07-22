@@ -176,3 +176,18 @@ footer {
   margin-top: 1.5rem;
   cursor: pointer;
 }
+.rank-list {
+  margin-top: 1rem;
+  list-style: none;
+  padding-left: 0;
+}
+.rank-list li {
+  padding: 0.8rem;
+  border-bottom: 1px dashed #a68c5b;
+  font-weight: bold;
+}
+.rank-list li span {
+  font-weight: normal;
+  font-style: italic;
+  color: #705c36;
+}
