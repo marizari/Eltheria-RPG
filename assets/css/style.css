@@ -5,14 +5,12 @@
   box-sizing: border-box;
 }
 
-/* BASE */
 body {
   background: url('../images/bg-parchment.jpg') repeat;
   background-size: cover;
   font-family: 'Cinzel Decorative', serif;
   color: #3e2f1c;
   line-height: 1.6;
-  padding: 2rem;
 }
 
 .container {
@@ -22,7 +20,6 @@ body {
   padding: 2rem 0;
 }
 
-/* HEADER */
 header {
   background-color: rgba(50, 30, 10, 0.9);
   padding: 1.5rem 0;
@@ -53,7 +50,6 @@ header {
   color: #ffd700;
 }
 
-/* HERO */
 .hero {
   text-align: center;
   padding: 5rem 0;
@@ -78,19 +74,17 @@ header {
   background-color: #a68c5b;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
-  transition: all 0.3s ease;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
 .btn:hover {
-  background-color: #d6b66b;
-  transform: scale(1.05);
+  background-color: #c8b17c;
 }
 
-/* SECTION TITLES */
 .section-title {
   font-size: 2rem;
   color: #593c1d;
@@ -99,7 +93,6 @@ header {
   display: inline-block;
 }
 
-/* BATALHAS */
 .battle {
   background-color: rgba(255, 248, 220, 0.9);
   border: 2px solid #a68c5b;
@@ -107,11 +100,6 @@ header {
   border-radius: 10px;
   margin-bottom: 2rem;
   text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
 }
 
 .battle .team {
@@ -124,13 +112,11 @@ header {
   width: 80px;
   height: auto;
   margin-bottom: 0.5rem;
-  transition: transform 0.3s ease, filter 0.3s;
-  filter: grayscale(30%);
+  transition: transform 0.3s ease;
 }
 
 .battle img:hover {
   transform: scale(1.1) rotate(5deg);
-  filter: grayscale(0%);
 }
 
 .vs {
@@ -142,13 +128,6 @@ header {
   vertical-align: middle;
 }
 
-.battle .info {
-  margin-top: 1rem;
-  font-style: italic;
-  color: #3e2f1c;
-}
-
-/* TOOLTIP */
 .tooltip {
   display: none;
   opacity: 0;
@@ -171,19 +150,33 @@ header {
   opacity: 1;
 }
 
-.crest {
-  width: 80px;
-  height: auto;
-  transition: transform 0.3s ease, filter 0.3s;
-  filter: grayscale(30%);
+.news {
+
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 5px solid #a68c5b;
+  margin-bottom: 3rem;
 }
 
-.crest:hover {
-  transform: scale(1.1) rotate(5deg);
-  filter: grayscale(0%);
+.news-item {
+  margin-bottom: 1.5rem;
+  background: #fff8dc;
+  padding: 1rem;
+  border-left: 4px solid #bfa266;
+  border-radius: 6px;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
-/* ENLISTAMENTO */
+.news-item h3 {
+  color: #4b3212;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .enlist label {
   display: block;
   margin-top: 1rem;
@@ -207,12 +200,12 @@ header {
   cursor: pointer;
 }
 
-/* RANKING */
 .rank-list {
+  margin-top: 1rem;
   list-style: none;
   padding-left: 0;
   max-width: 600px;
-  margin: 1rem auto 0;
+  margin: 0 auto;
 }
 
 .rank-list li {
@@ -227,7 +220,31 @@ header {
   color: #705c36;
 }
 
-/* VOLTAR */
+.arena {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: rgba(245, 237, 200, 0.95);
+  border: 2px solid #a68c5b;
+  border-radius: 12px;
+  box-shadow: 1px 1px 8px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.arena h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #4a3319;
+}
+
+footer {
+  background-color: rgba(50, 30, 10, 0.9);
+  color: #f3e4c9;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 3rem;
+  border-top: 3px solid #a68c5b;
+}
+
 .back-link {
   display: block;
   text-align: center;
@@ -239,14 +256,4 @@ header {
 
 .back-link:hover {
   text-decoration: underline;
-}
-
-/* FOOTER */
-footer {
-  background-color: rgba(50, 30, 10, 0.9);
-  color: #f3e4c9;
-  text-align: center;
-  padding: 2rem 0;
-  margin-top: 3rem;
-  border-top: 3px solid #a68c5b;
 }

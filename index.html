@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eltheria - As Crônicas da Guerra das Quatro Casas</title>
 
-  <!-- Fontes e estilos -->
+
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
@@ -21,7 +21,7 @@
           <li><a href="#batalhas">Batalhas</a></li>
           <li><a href="#mensageiro">Mensageiro</a></li>
           <li><a href="#alistamento">Alistamento</a></li>
-          <li><a href="batalhas.html" target="_blank">Arena</a></li>
+          <li><a href="arena.html" target="_blank">Arena</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
@@ -38,11 +38,41 @@
     </section>
 
     <section class="battles" id="batalhas">
-      <!-- Futuras batalhas poderão aparecer aqui -->
+      <div class="container">
+        <h2 class="section-title">Próximas Batalhas</h2>
+        <div class="battle">
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Shield_01.svg" alt="Casa Lux" class="crest" />
+            <div class="tooltip">Casa Lux - Cavaleiros de Aurelion</div>
+          </div>
+          <div class="vs">VS</div>
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Shield_03.svg" alt="Casa Umbra" class="crest" />
+            <div class="tooltip">Casa Umbra - Filhos da Sombra</div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="news" id="mensageiro">
-      <!-- Notícias do mundo de Eltheria -->
+      <div class="container">
+        <h2 class="section-title">📜 Mural de Eltheria</h2>
+
+        <div class="news-item fade-in">
+          <h3> Relatos de Guerra</h3>
+          <p><strong>[Silvarin, fronteira oeste]</strong> — A Casa Lux venceu uma emboscada organizada pelos Tecnoarcanistas. Ecos da vitória ainda soam entre os troncos de Silvarin.</p>
+        </div>
+
+        <div class="news-item fade-in">
+          <h3> Conclave dos Arcanos</h3>
+          <p><strong>[Torre Sombria]</strong> — Magos Umbrianos discutem limites da magia de controle. Um novo grimório proibido pode estar em circulação.</p>
+        </div>
+
+        <div class="news-item fade-in">
+          <h3> Convocação Oficial</h3>
+          <p><strong>[Conselho de Eltheria]</strong> — Combatentes de todas as Casas são convocados. Honrarias especiais aos que provarem lealdade com sangue e bravura.</p>
+        </div>
+      </div>
     </section>
 
     <section class="enlist" id="alistamento">
@@ -90,7 +120,6 @@
     </div>
   </footer>
 
-  <!-- JavaScript separado -->
   <script src="./assets/js/script.js"></script>
 </body>
 
