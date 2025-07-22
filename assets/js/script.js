@@ -1,4 +1,3 @@
-// Mostrar tooltip de forma dinâmica (por precaução)
 document.querySelectorAll('.team').forEach(team => {
   team.addEventListener('mouseenter', () => {
     const tip = team.querySelector('.tooltip');
@@ -10,7 +9,7 @@ document.querySelectorAll('.team').forEach(team => {
   });
 });
 
-// Alistamento de guerreiros
+
 document.getElementById("form-alistamento")?.addEventListener("submit", function (e) {
   e.preventDefault();
   const nome = document.getElementById("nome").value;
@@ -23,10 +22,10 @@ document.getElementById("form-alistamento")?.addEventListener("submit", function
   localStorage.setItem("guerreiros", JSON.stringify(guerreiros));
 
   document.getElementById("resposta-alistamento").innerText =
-    `⚔️ Bravo(a) ${nome}, sua alma foi vinculada à Casa ${casa} como um(a) ${classe}. Que os deuses de Eltheria te guiem na guerra!`;
+    `Bravo(a) ${nome}, sua alma foi vinculada à Casa ${casa} como um(a) ${classe}. Que os deuses de Eltheria te guiem na guerra!`;
 });
 
-// Ranking da Arena
+
 function listarGuerreiros() {
   const lista = document.getElementById("lista-guerreiros");
   if (!lista) return;
@@ -38,7 +37,7 @@ function listarGuerreiros() {
     return;
   }
 
-  // Ordenar por vitórias
+
   guerreiros.sort((a, b) => b.vitorias - a.vitorias);
 
   lista.innerHTML = guerreiros.map((g, i) =>
@@ -59,12 +58,10 @@ window.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Escolhe dois guerreiros aleatórios diferentes
       const [g1, g2] = [...guerreiros].sort(() => 0.5 - Math.random()).slice(0, 2);
       const vencedor = Math.random() > 0.5 ? g1 : g2;
       vencedor.vitorias++;
 
-      // Atualiza a lista
       localStorage.setItem("guerreiros", JSON.stringify(guerreiros));
 
       arenaDiv.innerHTML = `
