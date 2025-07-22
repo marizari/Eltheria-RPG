@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arena de Eltheria</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./index.html">
-    <link rel="stylesheet" href="assets/js/script.js">
 
+  <!-- Fonte temática -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS exclusivo da arena -->
+  <link rel="stylesheet" href="./assets/css/arena-style.css">
 </head>
 <body>
 
@@ -19,26 +20,7 @@
 
   <a href="index.html" class="back-link">← Voltar para o Reino</a>
 
-  <script>
-    function listarGuerreiros() {
-      const lista = document.getElementById("lista-guerreiros");
-      const guerreiros = JSON.parse(localStorage.getItem("guerreiros")) || [];
-
-      if (guerreiros.length === 0) {
-        lista.innerHTML = '<li>Nenhum guerreiro alistado ainda.</li>';
-        return;
-      }
-
-      // Ordenar por vitórias (opcional)
-      guerreiros.sort((a, b) => b.vitorias - a.vitorias);
-
-      lista.innerHTML = guerreiros.map((g, i) =>
-        `<li>#${i + 1} ${g.nome} <span>— ${g.classe} da Casa ${g.casa} | Vitórias: ${g.vitorias}</span></li>`
-      ).join('');
-    }
-
-    window.addEventListener("DOMContentLoaded", listarGuerreiros);
-  </script>
-
+  <!-- JS exclusivo da arena -->
+  <script src="./assets/js/arena-script.js"></script>
 </body>
 </html>

@@ -2,13 +2,13 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eltheria - As Crônicas da Guerra das Quatro Casas</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/style.css">
-
+  <!-- Fontes e estilos -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
@@ -37,9 +37,13 @@
       </div>
     </section>
 
-    <section class="battles" id="batalhas"> ... </section>
+    <section class="battles" id="batalhas">
+      <!-- Futuras batalhas poderão aparecer aqui -->
+    </section>
 
-    <section class="news" id="mensageiro"> ... </section>
+    <section class="news" id="mensageiro">
+      <!-- Notícias do mundo de Eltheria -->
+    </section>
 
     <section class="enlist" id="alistamento">
       <div class="container">
@@ -86,33 +90,8 @@
     </div>
   </footer>
 
-  <script>
-    document.querySelectorAll('.team').forEach(team => {
-      team.addEventListener('mouseenter', () => {
-        const tip = team.querySelector('.tooltip');
-        if (tip) tip.style.display = 'block';
-      });
-      team.addEventListener('mouseleave', () => {
-        const tip = team.querySelector('.tooltip');
-        if (tip) tip.style.display = 'none';
-      });
-    });
-
-    document.getElementById("form-alistamento").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const nome = document.getElementById("nome").value;
-      const casa = document.getElementById("casa").value;
-      const classe = document.getElementById("classe").value;
-
-      const guerreiro = { nome, casa, classe, vitorias: Math.floor(Math.random() * 5) };
-      let guerreiros = JSON.parse(localStorage.getItem("guerreiros")) || [];
-      guerreiros.push(guerreiro);
-      localStorage.setItem("guerreiros", JSON.stringify(guerreiros));
-
-      document.getElementById("resposta-alistamento").innerText =
-        `⚔️ Bravo(a) ${nome}, sua alma foi vinculada à Casa ${casa} como um(a) ${classe}. Que os deuses de Eltheria te guiem na guerra!`;
-    });
-  </script>
+  <!-- JavaScript separado -->
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

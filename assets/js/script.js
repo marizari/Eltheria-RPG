@@ -1,5 +1,4 @@
 
-// Mostrar tooltip de forma dinâmica (por precaução)
 document.querySelectorAll('.team').forEach(team => {
   team.addEventListener('mouseenter', () => {
     const tip = team.querySelector('.tooltip');

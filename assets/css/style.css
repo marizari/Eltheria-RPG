@@ -1,15 +1,18 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* BASE */
 body {
   background: url('../images/bg-parchment.jpg') repeat;
   background-size: cover;
   font-family: 'Cinzel Decorative', serif;
   color: #3e2f1c;
   line-height: 1.6;
+  padding: 2rem;
 }
 
 .container {
@@ -19,7 +22,7 @@ body {
   padding: 2rem 0;
 }
 
-
+/* HEADER */
 header {
   background-color: rgba(50, 30, 10, 0.9);
   padding: 1.5rem 0;
@@ -50,7 +53,7 @@ header {
   color: #ffd700;
 }
 
-
+/* HERO */
 .hero {
   text-align: center;
   padding: 5rem 0;
@@ -75,17 +78,19 @@ header {
   background-color: #a68c5b;
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover {
-  background-color: #c8b17c;
+  background-color: #d6b66b;
+  transform: scale(1.05);
 }
 
-
+/* SECTION TITLES */
 .section-title {
   font-size: 2rem;
   color: #593c1d;
@@ -94,7 +99,7 @@ header {
   display: inline-block;
 }
 
-/* Batalhas */
+/* BATALHAS */
 .battle {
   background-color: rgba(255, 248, 220, 0.9);
   border: 2px solid #a68c5b;
@@ -102,17 +107,30 @@ header {
   border-radius: 10px;
   margin-bottom: 2rem;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .battle .team {
   display: inline-block;
   width: 40%;
+  position: relative;
 }
 
 .battle img {
   width: 80px;
   height: auto;
   margin-bottom: 0.5rem;
+  transition: transform 0.3s ease, filter 0.3s;
+  filter: grayscale(30%);
+}
+
+.battle img:hover {
+  transform: scale(1.1) rotate(5deg);
+  filter: grayscale(0%);
 }
 
 .vs {
@@ -130,29 +148,42 @@ header {
   color: #3e2f1c;
 }
 
-
-.news-item {
-  background: rgba(245, 237, 200, 0.95);
-  border-left: 5px solid #a68c5b;
-  padding: 1rem 1.5rem;
-  margin-bottom: 1.5rem;
-  border-radius: 5px;
-}
-
-.news-item h3 {
-  color: #4b3212;
-  margin-bottom: 0.5rem;
-}
-
-
-footer {
-  background-color: rgba(50, 30, 10, 0.9);
+/* TOOLTIP */
+.tooltip {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: rgba(50, 30, 10, 0.9);
   color: #f3e4c9;
-  text-align: center;
-  padding: 2rem 0;
-  margin-top: 3rem;
-  border-top: 3px solid #a68c5b;
+  padding: 0.6rem;
+  position: absolute;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  width: 180px;
+  z-index: 100;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
 }
+
+.team:hover .tooltip {
+  display: block;
+  opacity: 1;
+}
+
+.crest {
+  width: 80px;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s;
+  filter: grayscale(30%);
+}
+
+.crest:hover {
+  transform: scale(1.1) rotate(5deg);
+  filter: grayscale(0%);
+}
+
+/* ENLISTAMENTO */
 .enlist label {
   display: block;
   margin-top: 1rem;
@@ -175,101 +206,47 @@ footer {
   margin-top: 1.5rem;
   cursor: pointer;
 }
+
+/* RANKING */
 .rank-list {
-  margin-top: 1rem;
   list-style: none;
   padding-left: 0;
+  max-width: 600px;
+  margin: 1rem auto 0;
 }
+
 .rank-list li {
   padding: 0.8rem;
   border-bottom: 1px dashed #a68c5b;
   font-weight: bold;
 }
+
 .rank-list li span {
   font-weight: normal;
   font-style: italic;
   color: #705c36;
 }
-/* Estilo para a página de ranking */
-    body {
-      font-family: 'Cinzel Decorative', serif;
-      background: #f8f1e3;
-      color: #3e2d1c;
-      padding: 2rem;
-    }
 
-    h1, h2 {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
+/* VOLTAR */
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+  text-decoration: none;
+  color: #4d3823;
+  font-weight: bold;
+}
 
-    .rank-list {
-      list-style: none;
-      padding: 0;
-      max-width: 600px;
-      margin: 0 auto;
-    }
+.back-link:hover {
+  text-decoration: underline;
+}
 
-    .rank-list li {
-      padding: 0.8rem;
-      border-bottom: 1px dashed #a68c5b;
-      font-weight: bold;
-    }
-
-    .rank-list li span {
-      font-weight: normal;
-      font-style: italic;
-      color: #705c36;
-    }
-
-    .back-link {
-      display: block;
-      text-align: center;
-      margin-top: 2rem;
-      text-decoration: none;
-      color: #4d3823;
-      font-weight: bold;
-    }
-
-    .back-link:hover {
-      text-decoration: underline;
-    }
-  .tooltip {
-      display: none;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      background: rgba(50, 30, 10, 0.9);
-      color: #f3e4c9;
-      padding: 0.6rem;
-      position: absolute;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      width: 180px;
-      z-index: 100;
-    }
-    .team {
-      position: relative;
-    }
-    .team:hover .tooltip {
-      display: block;
-      opacity: 1;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    .crest {
-      width: 80px;
-      height: auto;
-      transition: transform 0.3s ease;
-    }
-    .crest:hover {
-      transform: scale(1.1) rotate(5deg);
-    }
-    .battle {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
+/* FOOTER */
+footer {
+  background-color: rgba(50, 30, 10, 0.9);
+  color: #f3e4c9;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 3rem;
+  border-top: 3px solid #a68c5b;
+}
