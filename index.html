@@ -6,11 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eltheria - As Crônicas da Guerra das Quatro Casas</title>
 
-  <!-- Fonte medieval -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- Estilo customizado -->
   <link rel="stylesheet" href="./assets/css/style.css">
+
   <style>
     .tooltip {
       display: none;
@@ -51,6 +49,21 @@
       gap: 1rem;
       margin-bottom: 2rem;
     }
+    .rank-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 1rem;
+    }
+    .rank-list li {
+      padding: 0.8rem;
+      border-bottom: 1px dashed #a68c5b;
+      font-weight: bold;
+    }
+    .rank-list li span {
+      font-weight: normal;
+      font-style: italic;
+      color: #705c36;
+    }
   </style>
 </head>
 
@@ -61,9 +74,10 @@
       <nav>
         <ul class="nav-list">
           <li><a href="#home">Início</a></li>
-          <li><a href="#batalhas">Próximas Batalhas</a></li>
+          <li><a href="#batalhas">Batalhas</a></li>
           <li><a href="#mensageiro">Mensageiro</a></li>
           <li><a href="#alistamento">Alistamento</a></li>
+          <li><a href="#arena">Arena</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
@@ -75,67 +89,17 @@
       <div class="container">
         <h2 class="subtitle">Embarque na Jornada</h2>
         <h1 class="title">As Crônicas de Eltheria</h1>
-        <a href="#batalhas" class="btn">Aliste-se na Guerra</a>
+        <a href="#alistamento" class="btn">Aliste-se na Guerra</a>
       </div>
     </section>
 
-    <section class="battles" id="batalhas">
-      <div class="container">
-        <h2 class="section-title">Próximas Batalhas</h2>
+    <section class="battles" id="batalhas"> ... </section>
 
-        <div class="battle">
-          <div class="team">
-            <img src="https://i.ibb.co/w67m0Hy/brasao-lux.png" alt="Casa Lux" class="crest">
-            <h3>Cavaleiros de Aurelion</h3>
-            <p class="tooltip">Luz • Força +2 • Defesa +1</p>
-          </div>
-          <div class="vs">vs</div>
-          <div class="team">
-            <img src="https://i.ibb.co/DwHD1Pk/brasao-umbra.png" alt="Casa Umbra" class="crest">
-            <h3>Filhos de Umbra</h3>
-            <p class="tooltip">Trevas • Agilidade +2 • Infiltração</p>
-          </div>
-          <p class="info">25 de julho, 10:00h – Arena Rubra</p>
-        </div>
-
-        <div class="battle">
-          <div class="team">
-            <img src="https://i.ibb.co/SdFqJcz/brasao-sylv.png" alt="Casa Sylv" class="crest">
-            <h3>Guardiões de Silvarin</h3>
-            <p class="tooltip">Natureza • Vitalidade +3 • Magia Verde</p>
-          </div>
-          <div class="vs">vs</div>
-          <div class="team">
-            <img src="https://i.ibb.co/1ZCTv6c/brasao-tek.png" alt="Casa Tek" class="crest">
-            <h3>Tecnoarcanistas</h3>
-            <p class="tooltip">Magitec • Tecnologia +3 • Runas</p>
-          </div>
-          <p class="info">26 de julho, 14:30h – Floresta Proibida</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="news" id="mensageiro">
-      <div class="container">
-        <h2 class="section-title">Mensageiro de Eltheria</h2>
-
-        <article class="news-item">
-          <h3>Relato da Batalha da Colina Rubra</h3>
-          <p>Os Cavaleiros de Aurelion defenderam o Relicário Sagrado contra os Espectros de Varnheim em um combate épico sob tempestade arcana.</p>
-        </article>
-
-        <article class="news-item">
-          <h3>Casa Sylv encontra Artefato Ancestral</h3>
-          <p>Durante uma expedição noturna, os Guardiões de Silvarin descobriram o Amuleto de Helya nas profundezas da caverna Luzerrante.</p>
-        </article>
-      </div>
-    </section>
+    <section class="news" id="mensageiro"> ... </section>
 
     <section class="enlist" id="alistamento">
       <div class="container">
         <h2 class="section-title">Aliste-se na Guerra</h2>
-        <p>Junte-se a uma das casas e defenda Eltheria com honra!</p>
-
         <form id="form-alistamento">
           <label for="nome">Nome do Guerreiro:</label>
           <input type="text" id="nome" name="nome" required>
@@ -159,12 +123,19 @@
           </select>
 
           <label for="mensagem">Mensagem ao Conselho:</label>
-          <textarea id="mensagem" name="mensagem" rows="3" placeholder="(Opcional)"></textarea>
+          <textarea id="mensagem" name="mensagem" rows="3"></textarea>
 
           <button type="submit" class="btn">Enviar Alistamento</button>
         </form>
-
         <div id="resposta-alistamento" style="margin-top: 1rem;"></div>
+      </div>
+    </section>
+
+    <section class="arena" id="arena">
+      <div class="container">
+        <h2 class="section-title">Arena de Eltheria</h2>
+        <p>Veja os guerreiros alistados e acompanhe suas vitórias na guerra.</p>
+        <ul id="lista-guerreiros" class="rank-list"></ul>
       </div>
     </section>
   </main>
@@ -172,37 +143,9 @@
   <footer id="contato">
     <div class="container">
       <h2 class="section-title">Contato com o Conselho</h2>
-      <p>Para mensagens, alianças ou alertas de guerra:</p>
       <p><strong>Email:</strong> conselhogeral@eltheria.org</p>
       <p><strong>Corvo Mensageiro:</strong> Torre Central de Aurelion, Eltheria</p>
       <p><strong>Código Rúnico:</strong> +55 31 99999-9999</p>
       <p>Conselho de Eltheria &copy; 2025 - Todos os direitos reservados.</p>
     </div>
   </footer>
-
-  <script>
-    document.querySelectorAll('.team').forEach(team => {
-      team.addEventListener('mouseenter', () => {
-        const tip = team.querySelector('.tooltip');
-        if (tip) tip.style.display = 'block';
-      });
-      team.addEventListener('mouseleave', () => {
-        const tip = team.querySelector('.tooltip');
-        if (tip) tip.style.display = 'none';
-      });
-    });
-
-    document.getElementById("form-alistamento").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const nome = document.getElementById("nome").value;
-      const casa = document.getElementById("casa").value;
-      const classe = document.getElementById("classe").value;
-
-      const resposta = `⚔️ Bravo(a) ${nome}, sua alma foi vinculada à Casa ${casa} como um(a) ${classe}. Que os deuses de Eltheria te guiem na guerra!`;
-
-      document.getElementById("resposta-alistamento").innerText = resposta;
-    });
-  </script>
-</body>
-
-</html>
